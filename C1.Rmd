@@ -1,0 +1,113 @@
+---
+title: "StatLearningC1C2"
+author: "Jie Hu"
+date: "March 30, 2016"
+output: html_document
+---
+
+### Note
+
+#### Basic Learning Process
+
+1. Data input (Get data): It utilizes observations, memory storage, and recall to provide a factual basis for further reasoning.
+2. Abstraction (Get concepts): Involves the translation of data into broader representations. 
+3. Modeling.
+$$y=f(x_1,x_2,...,x_p)$$
+4. Generalization (make inferences): It uses abstracted data to form a basis for future action.
+
+5. Evaluation (Feedback for improvements): try to make imporvements.
+
+
+#### Machine Learning vs Data Mining
+The main difference is that machine learning is used to group similar observations based on important variables or to develop models for prediction. While data mining is used to search for “hidden nuggets” in data.
+
+#### Steps to apply machine learning to your data
+1. Collect data
+2. Exploring and preparing the data
+3. Training a model on the data
+4. Evaluating the model performance
+5. Improving model performance
+
+#### Type of ML Alg
+
+Model | Type | Learning task | Chapter
+------|------|---------------|--------
+Nearest Neighbor |Supervised |  Classification | 3
+Naive Bayes      |Supervised |  Classification | 4
+Decision Trees   |Supervised |  Classification | 5
+Classification Rule Learners |Supervised |  Classification | 5
+Linear Regression |Supervised |  Numeric prediction | 6
+Regression Trees |Supervised |  Numeric prediction | 6
+Model Trees |Supervised |  Numeric prediction | 6
+Neural Networks |Supervised |  Dual use | 7
+Support Vector Machines |Supervised |  Dual use | 7
+Association Rules |Unsupervised |  Pattern detection | 8
+k-means clustering |Unsupervised | Clustering | 9
+Bagging |Meta-Learning Alg. | Dual use | 11
+Boosting |Meta-Learning Alg. | Dual use | 11
+Random Forests |Meta-Learning Alg. | Dual use | 11
+
+#### R Code to import ML libs
+
+```{r}
+# use install.packages("RWeka")
+# Loading Lib
+library(RWeka)
+# To unload if you won't use
+detach("package:RWeka", unload = TRUE)
+```
+
+
+
+### HW1
+
+Do an extensive google search on the terms
+
+*Statistical Learning
+*Statistical Machine Learning
+*Machine Learning
+Report on what is these terms mean.
+
+Do they mean the same thing?
+
+Or are there differences?
+
+Answer: 
+
+1.Statistical learning theory deals with the problem of finding a predictive function based on data.
+(from https://en.wikipedia.org/wiki/Statistical_learning_theory)
+
+2. Statistical Machine Learning:
+The term "statistical" in the title reflects the emphasis on statistical analysis and methodology, which is the predominant approach in modern machine learning.
+(http://www.cs.cmu.edu/~10702/)
+
+3. Machine Learning: a field of study that gives computers the ability to learn without being explicitly programmed.
+A more formal definition:
+A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E
+(from https://en.wikipedia.org/wiki/Machine_learning)
+
+For my understanding, statistical learning focus more on theritically checking how model fit the data, while machine learning focus more on algorithm to make machine learn. To implement machine learning more propriately, one should know statistics as base of machine learning.
+
+
+#### Run code of chapter 2
+
+Here I only take note on new things I learned:
+
+1. exclude element of a vector:
+
+>temperature[-2]
+
+
+2. ordered factor:
+
+>symptoms <- factor(c("SEVERE", "MILD", "MODERATE"),
+>levels = c("MILD", "MODERATE", "SEVERE"),
+>ordered = TRUE)
+
+
+3. extract columns from data frame:
+
+>pt_data[c("temperature", "flu_status")]
+
+
+##################################################
